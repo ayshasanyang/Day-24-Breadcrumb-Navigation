@@ -1,0 +1,73 @@
+/* General Styling */
+body {
+  font-family: "Arial", sans-serif;
+  background: #061932; /* Dark Blue */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Breadcrumb Container */
+.breadcrumb {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+/* Breadcrumb Items */
+.breadcrumb li {
+  background: #00b7c2; /* Blue */
+  color: white;
+  padding: 12px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.breadcrumb li i {
+  font-size: 16px;
+}
+
+/* Chevron Shape */
+.breadcrumb li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -20px;
+  width: 0;
+  height: 0;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  border-left: 20px solid #00b7c2; /* Same as background */
+  z-index: 1;
+}
+
+/* Remove Arrow on Last Item */
+.breadcrumb li:last-child::after {
+  display: none;
+}
+
+/* Active Item */
+.breadcrumb li.active {
+  background: #fba834; /* Teal */
+}
+
+.breadcrumb li.active::after {
+  border-left-color: #fba834;
+}
+
+/* Hover Effect */
+.breadcrumb li:hover {
+  background: #465881; /* Darker Blue */
+}
+
+.breadcrumb li:hover::after {
+  border-left-color: #465881;
+}
